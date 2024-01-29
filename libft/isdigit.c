@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 22:32:00 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/01/29 20:41:03 by dsedlets         ###   ########.fr       */
+/*   Created: 2024/01/29 20:42:30 by dsedlets          #+#    #+#             */
+/*   Updated: 2024/01/29 20:51:37 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+int	ft_isdigit(char c)
 {
-	return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+	return (c >= '0' && c <= '9');
 }
 /*
 #include <stdio.h>
@@ -23,12 +23,12 @@ int	main(void)
 	char a;
 	char b;
 
-	a = 'e';
-	b = '6';
-	printf("%d \n", ft_isalpha(a));
-	printf("%d \n", isalpha(a));
-	printf("%d \n", ft_isalpha(b));
-	printf("%d \n", isalpha(b));
-	return (0);
+	a = '4';
+	b = 'r';
+	printf("%d \n", ft_isdigit(a));
+	printf("%d \n", isdigit(a));
+	printf("%d \n", ft_isdigit(b));
+	printf("%d \n", isdigit(b));
+	return(0);
 }
 */
