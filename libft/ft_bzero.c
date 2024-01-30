@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 23:07:38 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/01/31 02:03:36 by dsedlets         ###   ########.fr       */
+/*   Created: 2024/01/31 01:14:14 by dsedlets          #+#    #+#             */
+/*   Updated: 2024/01/31 02:02:45 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *a = b;
-	size_t	i;
+	unsigned char *p = s;
 
-	i = 0;
-	while (i < len)
+	while (n-- > 0)
 	{
-		a[i] = (unsigned char)c;
-		i++;
+		*p++ = 0;
 	}
-	return b;
 }
 /*
 #include <stdio.h>
-#include <string.h>
+#include <strings.h>
 
 int	main(void)
 {
-	char b[] = "1234567890";
-	int c1 = 97;
-	size_t len1 = 7;
-	char d[] = "1234567890";
-	int c2 = 97;
-	size_t len2 = 7;
+	char a[] = "12345678798";
+	char b[] = "12345678789";
 
-	printf("%s \n", (char *)ft_memset(b, c1, len1));
-	printf("%s \n", (char *)memset(d, c2, len2));
+	ft_bzero(a, 19);
+	bzero(b, 10);
+
+	printf("%s \n", a);
+	printf("%s \n", b);
 	return (0);
 }
 */
