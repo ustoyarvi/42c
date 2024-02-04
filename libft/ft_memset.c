@@ -6,24 +6,27 @@
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 23:07:38 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/01/31 02:03:36 by dsedlets         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:12:58 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *a = b;
-	size_t	i;
+	unsigned char	*a;
+	size_t			i;
 
+	if (!b)
+		return (NULL);
+	a = b;
 	i = 0;
 	while (i < len)
 	{
 		a[i] = (unsigned char)c;
 		i++;
 	}
-	return b;
+	return (b);
 }
 /*
 #include <stdio.h>

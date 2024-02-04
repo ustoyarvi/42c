@@ -6,20 +6,21 @@
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:21:19 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/02/02 00:10:20 by dsedlets         ###   ########.fr       */
+/*   Updated: 2024/02/04 20:57:51 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	unsigned char *p_dest = (unsigned char *)dest;
-	unsigned char *p_src = (unsigned char *)src;
+	unsigned char	*p_dest;
+	unsigned char	*p_src;
 
+	*p_dest = (unsigned char *)dest;
+	*p_src = (unsigned char *)src;
 	if (p_dest == p_src)
-		return dest;
-
+		return (dest);
 	if (p_dest < p_src)
 	{
 		while (len--)
@@ -27,7 +28,6 @@ void *ft_memmove(void *dest, const void *src, size_t len)
 			*p_dest++ = *p_src++;
 		}
 	}
-
 	else
 	{
 		p_dest += len;
@@ -37,7 +37,7 @@ void *ft_memmove(void *dest, const void *src, size_t len)
 			*--p_dest = *--p_src;
 		}
 	}
-	return dest;
+	return (dest);
 }
 /*
 #include <stdio.h>
