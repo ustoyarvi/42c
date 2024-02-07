@@ -22,7 +22,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	dst_len = 0;
 	while (dest[dst_len] != '\0')
 		dst_len++;
-	while (src[src_len
+	src_len = 0;
+	while (src[src_len] != '\0')
+		src_len++;
 	i = 0;
 	while (dest[dst_len] != '\0' || dst_len < dstsize - 1 || src[i] != '\0')
 	{
@@ -39,15 +41,15 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 
 int	main(void)
 {
-	char	*dest[20] = "Hello, ";
-	char	*dest2[20] = "Hello, ";
+	char	dest[20] = "Hello, ";
+	char	dest2[20] = "Hello, ";
 	const char	*src = "world!";
 
-	size_t	len = strlcat(dest, src, 20);
+//:size_t	len = strlcat(dest, src, 20);
 	size_t	len2 = ft_strlcat(dest2, src, 20);
 	printf("%s\n", dest);
 	printf("%s\n", dest2);
-	printf("len %zu\n", len);
+//printf("len %zu\n", len);
 	printf("len2 %zu\n", len2);
 	return (0);
 }
