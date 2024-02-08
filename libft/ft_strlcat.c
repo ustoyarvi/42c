@@ -6,7 +6,7 @@
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:25:05 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/02/04 22:43:08 by dsedlets         ###   ########.fr       */
+/*   Updated: 2024/02/09 01:05:28 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	size_t	dst_len;
 	size_t	src_len;
-	size_t	total_len;
 	size_t	i;
+	size_t	start;
 
 	dst_len = 0;
 	while (dest[dst_len] != '\0')
@@ -25,8 +25,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	src_len = 0;
 	while (src[src_len] != '\0')
 		src_len++;
+	if (dst_len < dstsize - 1)
+		start = dst_len;
 	i = 0;
-	while (dest[dst_len] != '\0' || dst_len < dstsize - 1 || src[i] != '\0')
+	while (dst_len < dstsize - 1 && src[i] != '\0')
 	{
 		dest[dst_len] = src[i];
 		dst_len++;
@@ -43,13 +45,13 @@ int	main(void)
 {
 	char	dest[20] = "Hello, ";
 	char	dest2[20] = "Hello, ";
-	const char	*src = "world!";
+	const char	*src = "world";
 
-//:size_t	len = strlcat(dest, src, 20);
-	size_t	len2 = ft_strlcat(dest2, src, 20);
+	size_t	len = ft_strlcat(dest, src, 5);
+	size_t	len2 = strlcat(dest2, src, 5);
 	printf("%s\n", dest);
 	printf("%s\n", dest2);
-//printf("len %zu\n", len);
+	printf("len %zu\n", len);
 	printf("len2 %zu\n", len2);
 	return (0);
 }
