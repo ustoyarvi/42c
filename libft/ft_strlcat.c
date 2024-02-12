@@ -6,7 +6,7 @@
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 21:25:05 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/02/09 01:05:28 by dsedlets         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:55:23 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	i = 0;
 	while (dst_len < dstsize - 1 && src[i] != '\0')
 	{
-		dest[dst_len] = src[i];
+		dest[st_len] = src[i];
 		dst_len++;
 		i++;
 	}
@@ -44,11 +44,11 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 int	main(void)
 {
 	char	dest[20] = "Hello, ";
-	char	dest2[20] = "Hello, ";
+	char	dest_ft[20] = "Hello, ";
 	const char	*src = "world";
 
-	size_t	len = ft_strlcat(dest, src, 5);
-	size_t	len2 = strlcat(dest2, src, 5);
+	size_t	len = strlcat(dest, src, 5);
+	size_t	len_ft = ft_strlcat(dest_ft, src, 5);
 	printf("%s\n", dest);
 	printf("%s\n", dest2);
 	printf("len %zu\n", len);

@@ -1,0 +1,51 @@
+cc main.c
+
+компилятор
+	компиляция
+	c99
+		декларации
+		дефиниция
+		идентификаторы
+
+объектные файлы (.o)
+
+линкер, связчик
+	линковка, связка
+	символы
+
+доступные инструменты (tools)
+	editor: VS code, vim
+	compiler tool chain
+	compiler: cc
+		# compiler without linker
+		cc -c main.c # generates an object file
+	linker: cc (c compiler)
+		cc main.o
+	GNU -- organization
+		GCC GNU compiler collection
+	list symbols: nm (names)
+		nm main.o
+	
+архиватор
+	-d delete
+		ar -d my-archive file
+	-r replace, add or create
+		ar -r my-archive file
+	-t table, list files
+	-x eXtract
+
+paste buffer
+	pwd | pbcopy
+	cd $(pbpaste)
+
+git
+	.gitignore
+	.git/info/exclude
+
+vim
+	V -- select lines
+	Escape -- escape
+	d -- delete
+	p -- paste
+	: -- Vim commands
+		! -- shell commands

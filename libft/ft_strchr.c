@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 20:55:30 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/02/10 18:02:01 by dsedlets         ###   ########.fr       */
+/*   Created: 2024/02/12 20:47:33 by dsedlets          #+#    #+#             */
+/*   Updated: 2024/02/12 23:13:37 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(char c)
+char	*ft_strchr(const char *s, int c)
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return (0);
 }
 /*
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
 int	main(void)
 {
-	char a, b, c;
+	const char s[] = "abcdefgh";
+	int	c = 'h';
 
-	a = 'q';
-	b = '3';
-	c = '*';	
-	printf("%d \n", ft_isalnum(a));
-	printf("%d \n", isalnum(a));
-	printf("%d \n", ft_isalnum(b));
-	printf("%d \n", isalnum(b));
-	printf("%d \n", ft_isalnum(c));
-	printf("%d \n", isalnum(c));
+	printf("%p\n", (void *)ft_strchr(s, c));
+	printf("%p\n", (void *)strchr(s, c));
 	return (0);
 }
 */
