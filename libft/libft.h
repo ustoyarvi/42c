@@ -6,14 +6,14 @@
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 00:52:10 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/02/12 00:52:46 by dsedlets         ###   ########.fr       */
+/*   Updated: 2024/02/13 01:24:44 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 
-int	ft_strlen(char *);
-int	ft_isascii(int);
+int	ft_strlen(const char *str);
+int	ft_isascii(int c);
 
 #endif
