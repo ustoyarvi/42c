@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsedlets <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 01:34:14 by dsedlets          #+#    #+#             */
-/*   Updated: 2024/02/13 18:08:31 by dsedlets         ###   ########.fr       */
+/*   Created: 2024/02/13 21:06:03 by dsedlets          #+#    #+#             */
+/*   Updated: 2024/02/13 22:20:20 by dsedlets         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i <= n - 1)
+	while (n--)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		if (*(unsigned char *)s1 != *(unsigned char *)s2)
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+		s1++;
+		s2++;
 	}
 	return (0);
 }
@@ -31,11 +29,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	main(void)
 {
-	char	s1[] = "abddefg";
-	char	s2[] = "abdcefgklp";
+	const char	*s1 = "Hello";
+	const char	*s2 = "Hello";
+	size_t	n = strlen(s1) + 1;
 
-	printf("%d\n", ft_strncmp(s1, s2, 9));
-	printf("%d\n", strncmp(s1, s2, 9));
+	printf("%d\n", ft_memcmp(s1, s2, n));
+	printf("%d\n", memcmp(s1, s2, n));
 	return (0);
 }
 */
